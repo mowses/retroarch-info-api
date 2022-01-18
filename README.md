@@ -24,7 +24,7 @@ cd retroarch-info-api/
 To be able to compile and run our project in the latest cores versions, please follow:
 
 Follow the manual installation for your desired core:
-- [Atari 2600 (Stella)](./installation/stella.md)
+- [Atari 2600 (Stella)](./docs/stella.md)
 
 
 ## COMPILE
