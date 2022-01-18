@@ -3,11 +3,10 @@
 BASEDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 append_content () {
-    local src=$1
-    local dst=$2
-
-    src_dir=$(echo "$src" | sed 's/\//\\\//g')
-    dst_dir=$(echo "$dst" | sed 's/\//\\\//g')
+    local src="$1"
+    local dst="$2"
+    local src_dir=$(echo "$src" | sed 's/\//\\\//g')
+    local dst_dir=$(echo "$dst" | sed 's/\//\\\//g')
     
     shopt -s nullglob dotglob
 
