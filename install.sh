@@ -28,10 +28,19 @@ append_content () {
     done
 }
 
-# recursively append the content of each file into the libretro-super
 src_dir="$BASEDIR/libretro-info-api/append"
+echo ""
+echo "Recursively append the content of files from $src_dir into the libretro-super:"
 dst_dir="$BASEDIR/libretro-super"
 append_content "$src_dir" "$dst_dir"
 
-# create symbolic link to the libretro-super to point to our 
-# libretro-bettinastella
+
+echo ""
+echo "Fetching cores that retroarch-info-api supports:"
+$BASEDIR/libretro-super/libretro-fetch.sh stella_info_api
+
+
+echo ""
+echo "Creating symlinks..."
+ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $BASEDIR/libretro-super/libretro-stella/src/libretro/info
+
