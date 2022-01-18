@@ -17,12 +17,12 @@ append_content () {
         else
             status="?????"
             if grep "# retroarch-info-api APPEND start" -F -q "$dst_file"; then
-                status="ALREADY EXISTS"
+                status="SKIPPED"
             else
                 cat $pathname >> $dst_file;
                 status="APPENDED"
             fi
-            printf '[%s] %s > %s\n' "$status" "$pathname" "$dst_file"
+            printf '[%s] %s >> %s\n' "$status" "$pathname" "$dst_file"
         fi
     done
 }
@@ -36,10 +36,10 @@ append_content "$src_dir" "$dst_dir"
 
 echo ""
 echo "Fetching cores that retroarch-info-api supports:"
-$dst_dir/libretro-fetch.sh stella_info_api
+cd $dst_dir && ./libretro-fetch.sh stella_info_api
 
 
 echo ""
 echo "Creating symlinks..."
-ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella/src/libretro/info
+ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella_info_api/src/libretro/info
 
