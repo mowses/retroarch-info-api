@@ -12,10 +12,13 @@ These are the implemented cores and functions:
 
 ## INSTALLATION
 
+This process will clone our repo which includes the [official libretro-super](https://github.com/libretro/libretro-super) submodule.
+`install.sh` will append some contents to the libretro-super files so we can build and compile our project.
+
 ```
 git clone --recurse-submodules -j8 https://github.com/mowses/retroarch-info-api.git
 cd retroarch-info-api/
-
+./install.sh
 ```
 
 ## USAGE

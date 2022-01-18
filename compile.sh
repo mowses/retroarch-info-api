@@ -3,7 +3,7 @@
 BASEDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 cd $BASEDIR/libretro-super/
-rm /home/unknown/snap/retroarch/1005/.config/retroarch/cores/bettinastella_libretro.so
+# rm /home/unknown/snap/retroarch/1005/.config/retroarch/cores/bettinastella_libretro.so
 
 ./libretro-bettinastella/configure
 NOCLEAN=1 ./libretro-build.sh bettinastella
