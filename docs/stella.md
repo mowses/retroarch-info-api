@@ -1,6 +1,6 @@
 ## This is manual installation for core Stella (Atari 2600)
 
-#### open file: ./libretro-super/libretro-stella/src/libretro/libretro.cxx
+#### open file: ./modules/libretro-super/libretro-stella_info_api/src/libretro/libretro.cxx
 
 add:
 ```
@@ -27,7 +27,7 @@ in the beggining of the function: `void retro_run()`
 
 
 
-#### open file: ./libretro-super/libretro-stella/src/common/HighScoresManager.cxx
+#### open file: ./modules/libretro-super/libretro-stella_info_api/src/common/HighScoresManager.cxx
 
 find
 ```
