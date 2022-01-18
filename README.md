@@ -31,15 +31,20 @@ In the root folder where you have cloned this repo:
 ```
 ./compile.sh
 ```
-This will compile the cores for you, so you run it with with RetroArch.
+This will compile the cores for you.
 
 ## USAGE
 
-Run your compiled version of Retroarch normally. Then open your terminal and type:
+Now you can run the compiled version of the cores. Let's start RetroArch using a core:
+```
+cd /path/to/cloned/repo
+retroarch -v -L ./modules/libretro-super/dist/unix/stella_info_api_libretro.so [/path/to/your/rom]
+```
+Once your game is running, open the terminal and type:
 ```
 nc -v -U /home/unknown/Downloads/server.sock
 ```
-and type: `current_score`[Enter]. You will receive a JSON response directly from your RetroArch process.
+After conected to the socket you may type: `current_score`[Enter]. You will receive a JSON response directly from RetroArch process.
 
 
 ## SOURCE

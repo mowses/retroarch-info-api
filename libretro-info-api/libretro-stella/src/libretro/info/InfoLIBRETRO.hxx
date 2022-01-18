@@ -1,7 +1,7 @@
 
 #include "OSystem.hxx"
 #include "./scores/stella.h"
-#include "/var/www/html/bettina/shared-lib/src/Resources/c++/unixsocket-server-client/Server.cxx"
+#include "./server/Server.cxx"
 
 bool on_bind(string message) { printf("on bind: %s\n", message.c_str()); return true; }
 bool on_connect(string message) { printf("on connect: %s\n", message.c_str()); return true; }
@@ -24,7 +24,7 @@ class InfoLIBRETRO
     void init()
     {
       server
-        .setPath("/home/unknown/Downloads/server.sock")
+        //.setPath("/home/unknown/Downloads/server.sock")  // todo
         .unlink()
         .on("bind", &on_bind)
         .on("connect", &on_connect)
@@ -32,6 +32,8 @@ class InfoLIBRETRO
         .on("message", &on_message)
         .connect()
         .bind();
+
+      cout << "INFO API is available to be connected at: " << server.getPath() << endl;
     };
     
     OSystem *myOSystem;

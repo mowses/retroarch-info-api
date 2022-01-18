@@ -1,4 +1,4 @@
-## This is manual installation for core Stella (Atari 2600)
+## This is the manual implementation for core Stella (Atari 2600)
 
 #### open file: ./modules/libretro-super/libretro-stella_info_api/src/libretro/libretro.cxx
 
@@ -44,15 +44,15 @@ and replace by:
 
 find
 ```
-const string& md5 = myOSystem.launcher().selectedRomMD5();
-myOSystem.propSet().getMD5(md5, props);
+    const string& md5 = myOSystem.launcher().selectedRomMD5();
+    myOSystem.propSet().getMD5(md5, props);
 ```
 and replace by:
 ```
-#ifdef GUI_SUPPORT
-  const string& md5 = myOSystem.launcher().selectedRomMD5();
-  myOSystem.propSet().getMD5(md5, props);
-#endif
+    #ifdef GUI_SUPPORT
+      const string& md5 = myOSystem.launcher().selectedRomMD5();
+      myOSystem.propSet().getMD5(md5, props);
+    #endif
 ```
 
 ------------------------------------------------
