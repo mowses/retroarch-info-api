@@ -29,18 +29,18 @@ append_content () {
 }
 
 src_dir="$BASEDIR/libretro-info-api/append"
+dst_dir="$BASEDIR/modules/libretro-super"
 echo ""
-echo "Recursively append the content of files from $src_dir into the libretro-super:"
-dst_dir="$BASEDIR/libretro-super"
+echo "Recursively append the content of files from $src_dir into $dst_dir:"
 append_content "$src_dir" "$dst_dir"
 
 
 echo ""
 echo "Fetching cores that retroarch-info-api supports:"
-$BASEDIR/libretro-super/libretro-fetch.sh stella_info_api
+$dst_dir/libretro-fetch.sh stella_info_api
 
 
 echo ""
 echo "Creating symlinks..."
-ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $BASEDIR/libretro-super/libretro-stella/src/libretro/info
+ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella/src/libretro/info
 
