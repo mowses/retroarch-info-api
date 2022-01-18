@@ -6,13 +6,23 @@ and returns the result as JSON to the caller process. Works like a realtime API.
 The communication is done via UNIX sockets between processes in the same machine.
 
 These are the implemented cores and functions:
-- Stella (atari)
+- Stella (Atari 2600)
 	- `current_score` returns the current score from player 1;
 
 
-## INSTALLATION AND USAGE
+## INSTALLATION
 
-Run `./compile.sh`
+```
+git clone https://github.com/mowses/retroarch-info-api.git
+cd retroarch-info-api/
+
+```
+
+## USAGE
+
+```
+./compile.sh
+```
 
 ## SOURCE
 
