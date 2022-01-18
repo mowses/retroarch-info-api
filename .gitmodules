@@ -1,0 +1,3 @@
+[submodule "modules/libretro-super"]
+	path = modules/libretro-super
+	url = https://github.com/libretro/libretro-super
