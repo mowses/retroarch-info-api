@@ -13,7 +13,7 @@ These are the implemented cores and functions:
 ## INSTALLATION
 
 ```
-git clone https://github.com/mowses/retroarch-info-api.git
+git clone --recurse-submodules -j8 https://github.com/mowses/retroarch-info-api.git
 cd retroarch-info-api/
 
 ```
