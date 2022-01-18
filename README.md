@@ -13,7 +13,7 @@ These are the implemented cores and functions:
 ## INSTALLATION
 
 This process will clone our repo which includes the [official libretro-super](https://github.com/libretro/libretro-super) submodule.
-`install.sh` will append some contents to the libretro-super files so we can build and compile our project.
+`install.sh` will append some contents to the libretro-super files so we can compile our project.
 
 ```
 git clone --recurse-submodules -j8 https://github.com/mowses/retroarch-info-api.git
@@ -21,17 +21,17 @@ cd retroarch-info-api/
 ./install.sh
 ```
 
-To be able to compile and run our project in the latest cores versions, please follow:
-
-Follow the manual installation for your desired core:
+To be able to compile and run our project with the latest cores versions, please follow our manual installation for cores:
 - [Atari 2600 (Stella)](./docs/stella.md)
 
 
 ## COMPILE
 
+In the root folder where you have cloned this repo:
 ```
 ./compile.sh
 ```
+This will compile the cores for you, so you run it with with RetroArch.
 
 ## USAGE
 

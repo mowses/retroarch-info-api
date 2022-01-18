@@ -23,7 +23,7 @@ add:
 ```
 infoLIBRETRO.retroRun();
 ```
-in the beggining of the function: `void retro_run()`
+inside the function: `void retro_run()` but as the latest statement.
 
 
 
@@ -57,4 +57,4 @@ and replace by:
 
 ------------------------------------------------
 
-That's all.
+That's all. Now head to the [Compile section](../README.md).

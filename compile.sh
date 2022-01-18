@@ -2,11 +2,11 @@
 
 BASEDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
-cd $BASEDIR/libretro-super/
+cd $BASEDIR/modules/libretro-super/
 # rm /home/unknown/snap/retroarch/1005/.config/retroarch/cores/bettinastella_libretro.so
 
-./libretro-bettinastella/configure
-NOCLEAN=1 ./libretro-build.sh bettinastella
+./libretro-stella_info_api/configure
+NOCLEAN=1 ./libretro-build.sh stella_info_api
 
 # comentar abaixo, só pra teste:
 # cp ./dist/unix/bettinastella_libretro.so ~/snap/retroarch/1005/.config/retroarch/cores/

@@ -37,6 +37,9 @@ append_content "$src_dir" "$dst_dir"
 echo ""
 echo "Fetching cores that retroarch-info-api supports:"
 cd $dst_dir && ./libretro-fetch.sh stella_info_api
+# replace the target_name from stella to stella_info_api
+# replacing this string make the compile process succeed in the `cp` step.
+sed -i 's/TARGET_NAME = stella$/TARGET_NAME = stella_info_api/' $dst_dir/libretro-stella_info_api/src/libretro/Makefile
 
 
 echo ""
