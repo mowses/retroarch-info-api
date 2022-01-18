@@ -29,11 +29,11 @@ in the beggining of the function: `void retro_run()`
 
 #### open file: ./libretro-super/libretro-stella/src/common/HighScoresManager.cxx
 
-find and replace
+find
 ```
 #include "Launcher.hxx"
 ```
-by:
+and replace by:
 ```
 #ifdef GUI_SUPPORT
 #include "Launcher.hxx"
@@ -42,12 +42,12 @@ by:
 
 ------------------------------------------------
 
-find and replace
+find
 ```
 const string& md5 = myOSystem.launcher().selectedRomMD5();
 myOSystem.propSet().getMD5(md5, props);
 ```
-by:
+and replace by:
 ```
 #ifdef GUI_SUPPORT
   const string& md5 = myOSystem.launcher().selectedRomMD5();
