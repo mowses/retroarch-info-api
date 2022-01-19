@@ -1,4 +1,5 @@
 
+#include <cstdlib>
 #include "OSystem.hxx"
 #include "./scores/stella.h"
 #include "./server/Server.cxx"
@@ -23,8 +24,13 @@ class InfoLIBRETRO
   private:
     void init()
     {
+      char const* unixfile = getenv("UNIXFILE");
+      
+      if (unixfile != NULL) {
+        server.setPath((string)unixfile);
+      }
+      
       server
-        //.setPath("/home/unknown/Downloads/server.sock")  // todo
         .unlink()
         .on("bind", &on_bind)
         .on("connect", &on_connect)
