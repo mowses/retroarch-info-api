@@ -50,7 +50,7 @@ Once RetroArch game is running, pay attention to the message: `INFO API is avail
 
 To request infos, open the terminal and type:
 ```
-nc -v -U /home/unknown/Downloads/server.sock
+nc -v -U ~/retroarch-info-api.sock
 ```
 After conected to the socket you may type: `current_score`[Enter]. You will receive a JSON response directly from RetroArch process.
 
