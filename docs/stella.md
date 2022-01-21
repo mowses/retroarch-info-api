@@ -1,6 +1,6 @@
 ## This is the manual implementation for core Stella (Atari 2600)
 
-This is the same thing that `./core-implementations/*` do.
+This is the same thing that `./core-implementations/stella.sh` do.
 
 **if you ran `install.sh` then you dont need to follow these steps**
 
