@@ -31,7 +31,7 @@ In the root folder where you have cloned this repo:
 ```
 ./compile.sh
 ```
-This will compile the cores for you.
+This will compile the cores for you. After you have run this command, you may find the compiled core at `./compiled/*_libretro.so`.
 
 ## USAGE
 
