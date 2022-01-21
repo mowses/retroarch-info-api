@@ -1,5 +1,10 @@
 ## This is the manual implementation for core Stella (Atari 2600)
 
+This is the same thing that `./core-implementations/*` do.
+
+**if you ran `install.sh` then you dont need to follow these steps**
+
+------------------------------------------------
 #### open file: ./modules/libretro-super/libretro-stella_info_api/src/libretro/libretro.cxx
 
 add:
@@ -15,7 +20,7 @@ add:
 ```
 infoLIBRETRO.setOSystem(stella.osystem());
 ```
-inside function `static bool reset_system()` but before `return true;`
+inside function `static bool reset_system()` but right before `return true;`
 
 ------------------------------------------------
 

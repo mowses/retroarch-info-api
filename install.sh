@@ -1,6 +1,19 @@
 #!/usr/bin/env bash
 
 BASEDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+LIBSUPER="$BASEDIR/modules/libretro-super"
+
+read -p "Warning! Any changes you may did in the $LIBSUPER will be lost.
+We are going to run a \`git reset --hard\` there. Should we proceed? N/y " -n 1 -r
+echo    # (optional) move to a new line
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+    echo "Aborted."
+    exit
+fi
+
+cd $LIBSUPER && git reset --hard
+
 
 append_content () {
     local src="$1"
@@ -28,7 +41,8 @@ append_content () {
 }
 
 src_dir="$BASEDIR/libretro-info-api/append"
-dst_dir="$BASEDIR/modules/libretro-super"
+dst_dir="$LIBSUPER"
+
 echo ""
 echo "Recursively append the content of files from $src_dir into $dst_dir:"
 append_content "$src_dir" "$dst_dir"
@@ -46,3 +60,6 @@ echo ""
 echo "Creating symlinks..."
 ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella_info_api/src/libretro/info
 
+echo ""
+echo "Implementing our lib in Stella core..."
+$BASEDIR/core-implementations/stella.sh
