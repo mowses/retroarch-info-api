@@ -21,7 +21,7 @@ cd retroarch-info-api/
 ./install.sh
 ```
 
-To know how to manual implement our lib to your favorite core please read the following docs: (You dont need to follow these steps if your have ran `./install.sh`)
+To know how to manual implement our lib to your favorite core please read the following docs: **(You dont need to follow these steps if you have ran `./install.sh`)**
 - [Atari 2600 (Stella)](./docs/stella.md)
 
 
