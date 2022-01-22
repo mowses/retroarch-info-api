@@ -35,8 +35,6 @@ void InfoLIBRETRO::retroRun()
         server.write(client, to_string(current_score(*myOSystem)));
       } else if (message == "retro_api_version") {
         server.write(client, to_string(retro_api_version()));
-      }  else if (message == "retro_get_region") {
-        server.write(client, to_string(retro_get_region()));
       } else {
         cout << "[INFO-API] Client " << client << " wrote unknown command: " << message << endl;
       }
