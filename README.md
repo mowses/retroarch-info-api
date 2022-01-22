@@ -6,8 +6,12 @@ and returns the result as JSON to the caller process. Works like a realtime API.
 The communication is done via UNIX sockets between processes in the same machine.
 
 These are the implemented cores and functions:
+- Any core:
+	- `retro_api_version` returns libretro API version;
+
 - [Stella (Atari 2600)](https://github.com/stella-emu/stella) [commit](https://github.com/stella-emu/stella/commit/4fce2156dfe6d6eeec5f80d0e643781c2d7f9317)
 	- `current_score` returns the current score from player 1;
+	- `retro_get_region` returns region code for NTSC or PAL;
 
 
 ## INSTALLATION
@@ -46,7 +50,7 @@ cp ./compiled/stella_info_api_libretro.so ~/snap/retroarch/1005/.config/retroarc
 ```
 The destination folder may vary depending on the version installed.
 
-Once RetroArch game is running, pay attention to the message: `INFO API is available to be connected at: ~/retroarch-info-api.sock`. Make sure to set env `UNIXFILE` to a valid file name and to a writable folder. I had trouble setting it to `/tmp/retroarch-info-api.sock`.
+Once RetroArch game is running, pay attention to the message: `[INFO-API] INFO API is available to be connected at: ~/retroarch-info-api.sock`. Make sure to set env `UNIXFILE` to a valid file name and to a writable folder. I had trouble setting it to `/tmp/retroarch-info-api.sock`.
 
 To request infos, open the terminal and type:
 ```

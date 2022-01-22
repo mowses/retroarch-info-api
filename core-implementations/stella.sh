@@ -2,9 +2,14 @@
 
 BASEDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 CORE="$( cd -- "$BASEDIR/../modules/libretro-super/libretro-stella_info_api/src"; pwd -P)"
+DATE=$(date)
 
 #### open file: ./modules/libretro-super/libretro-stella_info_api/src/libretro/libretro.cxx
 FILE="$CORE/libretro/libretro.cxx"
+# add timestamp to the beginning of file
+# this forces ./compile.sh to always compile the core
+sed -i "1s;^;// $DATE\n;" $FILE
+
 # add:
 # ```
 # #include "./info/InfoLIBRETRO.cxx"

@@ -4,20 +4,16 @@
 #include "./scores/stella.h"
 #include "./server/Server.cxx"
 
-bool on_bind(string message) { printf("on bind: %s\n", message.c_str()); return true; }
-bool on_connect(string message) { printf("on connect: %s\n", message.c_str()); return true; }
-bool on_error(string message) { printf("on error: %s\n", message.c_str()); return true; }
-bool on_message(string message) { printf("on message: %s\n", message.c_str()); return true; }
+bool on_bind(string message) { printf("[INFO-API] socket bound\n"); return true; }
+bool on_connect(string message) { printf("[INFO-API] socket connected\n"); return true; }
+bool on_error(string message) { printf("[INFO-API] socket error: %s\n", message.c_str()); return true; }
+bool on_message(string message) { printf("[INFO-API] socket message: %s\n", message.c_str()); return true; }
 
 class InfoLIBRETRO
 {
   public:
     InfoLIBRETRO();
     
-    json currentScore() {
-      return current_score(*myOSystem);
-    }
-
     void retroRun();
     void setOSystem(OSystem& system);
 
@@ -39,7 +35,7 @@ class InfoLIBRETRO
         .connect()
         .bind();
 
-      cout << "INFO API is available to be connected at: " << server.getPath() << endl;
+      cout << "[INFO-API] INFO API is available to be connected at: " << server.getPath() << endl;
     };
     
     OSystem *myOSystem;

@@ -3,8 +3,9 @@
 BASEDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 LIBSUPER="$BASEDIR/modules/libretro-super"
 
-read -p "Warning! Any changes you may did in the $LIBSUPER will be lost.
-We are going to run a \`git reset --hard\` there. Should we proceed? N/y " -n 1 -r
+read -p "
+Warning! Any changes you may did in the $LIBSUPER will be lost.
+We are going to run a \`git reset --hard\` there. Shall we proceed? (N/y) " -n 1 -r
 echo    # (optional) move to a new line
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
@@ -58,8 +59,10 @@ sed -i 's/TARGET_NAME = stella$/TARGET_NAME = stella_info_api/' $dst_dir/libretr
 
 
 echo ""
-echo "Creating symlinks..."
+echo -n "Creating symlinks..."
+rm $dst_dir/libretro-stella_info_api/src/libretro/info
 ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella_info_api/src/libretro/info
+echo "ok";
 
 echo ""
 echo "Implementing our lib in Stella core..."
