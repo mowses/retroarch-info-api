@@ -1,5 +1,6 @@
 
 #include <cstdlib>
+#include <sstream>
 #include "OSystem.hxx"
 #include "./scores/stella.h"
 #include "./server/Server.cxx"
