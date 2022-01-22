@@ -13,6 +13,7 @@ then
 fi
 
 cd $LIBSUPER && git reset --hard
+cd $LIBSUPER/libretro-stella_info_api && git reset --hard
 
 
 append_content () {
