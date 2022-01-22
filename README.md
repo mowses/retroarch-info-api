@@ -38,11 +38,11 @@ This will compile the cores for you. After you have run this command, you may fi
 Now you can run the compiled version of the cores. Let's start RetroArch using a core:
 ```
 cd /path/to/cloned/repo
-UNIXFILE=~/retroarch-info-api.sock retroarch -v -L ./modules/libretro-super/dist/unix/stella_info_api_libretro.so [/path/to/your/rom]
+UNIXFILE=~/retroarch-info-api.sock retroarch -v -L ./compiled/stella_info_api_libretro.so [/path/to/your/rom]
 ```
-Watch for RetroArch `[WARN] --libretro argument "./modules/libretro-super/dist/unix/stella_info_api_libretro.so" is neither a file nor directory. Ignoring.` This means that you need to make sure the file exists, and can be read by the user running RetroArch. You may need to copy the core to the same folder where other cores are. For example, I installed my RetroArch using snap:
+Watch for RetroArch `[WARN] --libretro argument "./compiled/stella_info_api_libretro.so" is neither a file nor directory. Ignoring.` This means that you need to make sure the file exists, and can be read by the user running RetroArch. You may need to copy the core to the same folder where other cores are. For example, I installed my RetroArch using snap:
 ```
-cp ./modules/libretro-super/dist/unix/stella_info_api_libretro.so ~/snap/retroarch/1005/.config/retroarch/cores/
+cp ./compiled/stella_info_api_libretro.so ~/snap/retroarch/1005/.config/retroarch/cores/
 ```
 The destination folder may vary depending on the version installed.
 
