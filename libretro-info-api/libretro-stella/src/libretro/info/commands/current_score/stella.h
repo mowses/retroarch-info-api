@@ -1,7 +1,7 @@
 #include "OSystem.hxx"
 #include "HighScoresManager.cxx"
 
-json current_score(OSystem& osystem)
+json info_current_score(OSystem& osystem)
 {
   json score = json::object();
   HighScoresManager highScoresManager(osystem);

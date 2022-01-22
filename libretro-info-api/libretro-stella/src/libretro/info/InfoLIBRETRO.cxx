@@ -32,9 +32,9 @@ void InfoLIBRETRO::retroRun()
       cout << "[INFO-API] Client " << client << " requested: " << message << endl;
 
       if (message == "current_score") {
-        server.write(client, to_string(current_score(*myOSystem)));
+        server.write(client, to_string(info_current_score(*myOSystem)));
       } else if (message == "retro_api_version") {
-        server.write(client, to_string(retro_api_version()));
+        server.write(client, to_string(info_retro_api_version()));
       } else {
         cout << "[INFO-API] Client " << client << " wrote unknown command: " << message << endl;
       }
