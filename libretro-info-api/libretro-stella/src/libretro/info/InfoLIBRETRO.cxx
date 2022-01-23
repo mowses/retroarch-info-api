@@ -38,11 +38,10 @@ void InfoLIBRETRO::retroRun()
       } else if (request == "retro_api_version") {
         response = info_retro_api_version();
       } else {
-        cout << "[INFO-API] Client " << client << " wrote unknown command: " << request << endl;
-        continue;
+        response = info_unknown_command();
       }
 
-      server.write(client, request + ":" + to_string(response) + '\0' + "\n");
+      server.write(client, request + ":" + to_string(response));
     }
   }
 }

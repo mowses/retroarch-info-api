@@ -4,6 +4,7 @@
 #include "OSystem.hxx"
 #include "./commands/current_score/stella.h"
 #include "./commands/retro_api_version/common.h"
+#include "./commands/unknown_command/common.h"
 #include "./server/Server.cxx"
 
 bool on_bind(string message) { printf("[INFO-API] socket bound\n"); return true; }

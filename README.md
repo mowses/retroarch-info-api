@@ -57,6 +57,9 @@ nc -v -U ~/retroarch-info-api.sock
 ```
 After conected to the socket you may type: `current_score`[Enter]. You will receive a JSON response directly from RetroArch process.
 
+Here is how you may request infos using:
+- [Javascript](./docs/usage-javascript.md)
+
 
 ## SOURCE
 
