@@ -12,13 +12,13 @@ const libretro_info_api = new LibretroInfoApiClient({
 console.log('The path to the unix file is:', libretro_info_api.getUnixFile());
 
 libretro_info_api
-    .ask('current_score', function (response) {
+    .request('current_score', function (response) {
         console.log('current_score response:', response);
     })
-    .ask('retro_api_version', function (response) {
+    .request('retro_api_version', function (response) {
         console.log('retro_api_version response:', response);
     })
-    .ask('any command that does not exist', function (response) {
+    .request('any command that does not exist', function (response) {
         console.log('any command that does not exist response:', response);
     })
     .close();

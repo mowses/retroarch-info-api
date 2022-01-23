@@ -10,7 +10,7 @@ const Client = function(options)
 		return options.unixfile;
 	}
 
-	this.ask = function (what, callback)
+	this.request = function (what, callback)
 	{
 		if (this.sock.destroyed) return this;
 
