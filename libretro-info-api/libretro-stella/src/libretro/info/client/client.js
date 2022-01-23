@@ -74,7 +74,7 @@ const Client = function(options)
 			}
 
 			requests.shift();
-			callback(response_message.substr(what.length + 1));
+			callback(JSON.parse(response_message.substr(what.length + 1)));
 			
 			if (requests.length > 0) {
 				write(requests[0][0]);
