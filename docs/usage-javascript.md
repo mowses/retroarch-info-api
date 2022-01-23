@@ -1,8 +1,8 @@
-## USAGE
+## JAVASCRIPT USAGE
 
-Usage examples using javascript:
+Usage examples for javascript:
 
-```
+```js
 import { default as LibretroInfoApiClient } from './libretro-info-api/libretro-stella/src/libretro/info/client/client.js';
 
 const libretro_info_api = new LibretroInfoApiClient({
