@@ -55,13 +55,15 @@ echo "Fetching cores that retroarch-info-api supports:"
 cd $dst_dir && ./libretro-fetch.sh stella_info_api
 # replace the target_name from stella to stella_info_api
 # replacing this string make the compile process succeed in the `cp` step.
-sed -i 's/TARGET_NAME = stella$/TARGET_NAME = stella_info_api/' $dst_dir/libretro-stella_info_api/src/libretro/Makefile
+sed -i 's/TARGET_NAME = stella$/TARGET_NAME = stella_info_api/' $dst_dir/libretro-stella_info_api/src/os/libretro/Makefile
 
 
 echo ""
 echo -n "Creating symlinks..."
-rm $dst_dir/libretro-stella_info_api/src/libretro/info
-ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella_info_api/src/libretro/info
+rm $dst_dir/libretro-stella_info_api/src/os/libretro/info 2>/dev/null
+ln -s $BASEDIR/libretro-info-api/libretro-stella/src/libretro/info $dst_dir/libretro-stella_info_api/src/os/libretro/info
+
+ln -s $BASEDIR/modules/libretro-super/libretro-stella_info_api/src/os/libretro $BASEDIR/modules/libretro-super/libretro-stella_info_api/src/libretro
 echo "ok";
 
 echo ""
