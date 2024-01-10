@@ -36,7 +36,7 @@ This will compile the cores for you. After you have run this command, you may fi
 Now you can run the compiled version of the cores. Let's start RetroArch using a core:
 ```bash
 cd /path/to/cloned/repo
-UNIXFILE=~/retroarch-info-api.sock retroarch -v -L ./compiled/stella_info_api_libretro.so /path/to/your/rom
+INFO_API_UNIX_FILE=~/retroarch-info-api.sock retroarch -v -L ./compiled/stella_info_api_libretro.so /path/to/your/rom
 ```
 Watch for RetroArch `[WARN] --libretro argument "./compiled/stella_info_api_libretro.so" is neither a file nor directory. Ignoring.` This means that you need to make sure the file exists, and can be read by the user running RetroArch. You may need to copy the core to the same folder where other cores are. For example, I installed my RetroArch using snap:
 ```bash
@@ -44,7 +44,7 @@ cp ./compiled/stella_info_api_libretro.so ~/snap/retroarch/1005/.config/retroarc
 ```
 The destination folder may vary depending on the version installed.
 
-Once RetroArch game is running, pay attention to the message: `[INFO-API] INFO API is available to be connected at: ~/retroarch-info-api.sock`. Make sure to set env `UNIXFILE` to a valid file name and to a writable folder. I had trouble setting it to `/tmp/retroarch-info-api.sock`.
+Once RetroArch game is running, pay attention to the message: `[INFO-API] INFO API is available to be connected at: ~/retroarch-info-api.sock`. Make sure to set env `INFO_API_UNIX_FILE` to a valid file name and to a writable folder. I had trouble setting it to `/tmp/retroarch-info-api.sock`.
 
 To request infos, open the terminal and type:
 ```bash

@@ -23,7 +23,7 @@ class InfoLIBRETRO
   private:
     void init()
     {
-      char const* unixfile = getenv("UNIXFILE");
+      char const* unixfile = getenv("INFO_API_UNIX_FILE");
       
       if (unixfile != NULL) {
         server.setPath((string)unixfile);
